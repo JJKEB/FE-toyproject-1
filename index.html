@@ -1,55 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="wrap">
 
-<!-- 프라미스 - 병렬처리 - then, fetch, 어싱크 어웨이 -->
-<div class="app-data">
-  <ul id="app"></ul>
-</div>
+  <aside class="bottom-fix-panel">
+    <a href="javascript:void(0)" class="home"></a>
+    <a href="javascript:void(0)" class="switching"></a>
+    <a href="javascript:void(0)" class="community"></a>
+    <a href="javascript:void(0)" class="setting"></a>
+  </aside>
 
-<script>
-  if('ActiveXObject' in window){
-    return newXML = new ActiveXObject('Msxml2.XMLHTTP');
-  }else{
-    return newXML = ;
-  }
-const newXML = new XMLHttpRequest();
-const jsonData = 'http://jsonplaceholder.typicode.com/photos/';
-newXML.open("GET", jsonData)
-newXML.responseType = 'json'
-newXML.send()
-newXML.onload = function(){
-  console.log(newXML.response)
-  start(newXML.response)
-}
+  <header class="account-info-header">
+    <div class="profile-img"></div>
+    <h1 class="account-name">생활비</h1>
+    <div class="utils">
+      <button type="button" class="qr-payment"></button>
+      <button type="button" class="search"></button>
+    </div>
+  </header>
 
-fetch('http://jsonplaceholder.typicode.com/photos/')
-  .then( res => res.json() )
-  .then( obj => { start(obj) } )
+  <!-- 계좌 정보 -->
+  <section class="user-account-info">
+    <div class="account-num">355-673877-78773</div>
+    <strong class="current-cost"></strong>
+    <div class="account-target-gauge">
+      <div class="progress-wrap">
+        <progress id="file" max="100" value="70"> 70% </progress>
+        <div class="trigger-bar"></div>
+      </div>
+      <button type="button" class="setting"></button>
+      <div class="limited-info">5일 동안 210,000원 남음</div>
+    </div>
+  </section>
 
-function start(photos){
-  const ulEl = document.createElement('ul')
-  document.querySelector('#app').appendChild(ulEl)
+  <!-- 광고 보드 -->
+  <aside class="ad-board">
+    <ul>
+      <li><a href="">지금 낮은 이자로 생활대출을 신청하세요! <span>Go</span></a></li>
+    </ul>
+  </aside>
 
-  for (let i = 0; i < 100; i++) {
-    const liEl = document.createElement('li')
-    const imgEl = document.createElement('img')
-    const pEl = document.createElement('p')
+  <!-- 계좌 상세 -->
+  <section class="account-detail">
 
-    imgEl.src = photos[i].thumbnailUrl;
-    pEl.textContent = photos[i].title;
-    liEl.appendChild(imgEl)
-    liEl.appendChild(pEl)
-    ulEl.appendChild(liEl)
-  }
-}
+    <!-- 테마 저축 -->
+    <div class="saving-plan">
+      <ul>
+        <li>
+          <div class="inner">
+            <span class="gauge"></span>
+            <div class="content">
+              <b class="nickname">여행가자!</b><span class="cost">842,200원</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="inner">
+            <span class="gauge"></span>
+            <div class="content">
+              <b class="nickname">여행가자!</b><span class="cost">842,200원</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div><!--// .saving-plan-->
 
-</script>
+    <!-- 사용내역 -->
+    <div class="usage-history">
+      <div class="day-history-wrap">
+        <div class="history-top">
+          <strong class="when">오늘</strong>
+          <span class="total-amount-used">127</span>
+        </div>
+        <ul class="list-used">
+          <li>
+            <span class="where">미스터피자</span>
+            <span class="cost">32,000</span>
+          </li>
+          <li>
+            <span class="where">미스터피자</span>
+            <span class="cost">32,000</span>
+          </li>
+          <li>
+            <span class="where">미스터피자</span>
+            <span class="cost income">+ 32,000</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="day-history-wrap">
+        <div class="history-top">
+          <strong class="when">오늘</strong>
+          <span class="total-amount-used">127</span>
+        </div>
+        <ul class="list-used">
+          <li>
+            <span class="where">미스터피자</span>
+            <span class="cost">32,000</span>
+          </li>
+          <li>
+            <span class="where">미스터피자</span>
+            <span class="cost">32,000</span>
+          </li>
+          <li>
+            <span class="where">미스터피자</span>
+            <span class="cost income">+ 32,000</span>
+          </li>
+        </ul>
+      </div>
+    </div><!--// .usage-history-->
+  </section><!--// .account-detail-->
+
+</div><!--// #wrap-->
 </body>
 </html>

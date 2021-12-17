@@ -239,6 +239,7 @@ fabric.properties
 .idea/codestream.xml
 
 ### Sass ###
+sass/
 .sass-cache/
 *.css.map
 *.sass.map
@@ -262,5 +263,9 @@ fabric.properties
 
 # Support for Project snippet scope
 !.vscode/*.code-snippets
+
+# custom
+.idea/watcherTasks.xml
+prepros.config
 
 # End of https://www.toptal.com/developers/gitignore/api/node,sass,phpstorm,visualstudiocode
