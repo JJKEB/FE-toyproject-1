@@ -10,7 +10,6 @@
 </head>
 <body>
 <div id="wrap">
-
   <aside class="bottom-fix-panel">
     <a href="javascript:void(0)" class="home"></a>
     <a href="javascript:void(0)" class="switching"></a>
@@ -19,24 +18,27 @@
   </aside>
 
   <header class="account-info-header">
-    <div class="profile-img"></div>
+    <div class="profile-img"><a href="javascript:void(0)" aria-label="나의 프로필 보기"></a></div>
     <h1 class="account-name">생활비</h1>
     <div class="utils">
-      <button type="button" class="qr-payment"></button>
-      <button type="button" class="search"></button>
+      <button type="button" class="qr-payment" aria-label="qr 스캔 간편결제"></button>
+      <button type="button" class="search" aria-label="계좌 상세 검색"></button>
     </div>
   </header>
 
   <!-- 계좌 정보 -->
   <section class="user-account-info">
-    <div class="account-num">355-673877-78773</div>
-    <strong class="current-cost"></strong>
-    <div class="account-target-gauge">
-      <div class="progress-wrap">
-        <progress id="file" max="100" value="70"> 70% </progress>
-        <div class="trigger-bar"></div>
+    <div class="inner">
+      <div class="account-num">355-673877-78773</div>
+      <strong class="current-price"><span class="num">1,240,000</span><span class="symbol">원</span></strong>
+      <div class="account-target-gauge">
+        <div class="progress-wrap">
+          <progress id="file" max="100" value="70"> 70% </progress>
+          <label for="volume">11</label><input type="range" id="volume" name="volume" min="0" max="100">
+          <div class="trigger-bar"></div>
+        </div>
+        <button type="button" class="setting" aria-label="지출 관리하기"></button>
       </div>
-      <button type="button" class="setting"></button>
       <div class="limited-info">5일 동안 210,000원 남음</div>
     </div>
   </section>
@@ -44,7 +46,7 @@
   <!-- 광고 보드 -->
   <aside class="ad-board">
     <ul>
-      <li><a href="">지금 낮은 이자로 생활대출을 신청하세요! <span>Go</span></a></li>
+      <li><a href="javascript:void(0)">지금 낮은 이자로 생활대출을 신청하세요! <span>Go</span></a></li>
     </ul>
   </aside>
 
@@ -58,7 +60,7 @@
           <div class="inner">
             <span class="gauge"></span>
             <div class="content">
-              <b class="nickname">여행가자!</b><span class="cost">842,200원</span>
+              <b class="nickname">여행가자!</b><span class="price">842,200원</span>
             </div>
           </div>
         </li>
@@ -66,7 +68,7 @@
           <div class="inner">
             <span class="gauge"></span>
             <div class="content">
-              <b class="nickname">여행가자!</b><span class="cost">842,200원</span>
+              <b class="nickname">여행가자!</b><span class="price">842,200원</span>
             </div>
           </div>
         </li>
@@ -83,15 +85,15 @@
         <ul class="list-used">
           <li>
             <span class="where">미스터피자</span>
-            <span class="cost">32,000</span>
+            <span class="price">32,000</span>
           </li>
           <li>
             <span class="where">미스터피자</span>
-            <span class="cost">32,000</span>
+            <span class="price">32,000</span>
           </li>
           <li>
             <span class="where">미스터피자</span>
-            <span class="cost income">+ 32,000</span>
+            <span class="price income">+ 32,000</span>
           </li>
         </ul>
       </div>
@@ -104,21 +106,20 @@
         <ul class="list-used">
           <li>
             <span class="where">미스터피자</span>
-            <span class="cost">32,000</span>
+            <span class="price">32,000</span>
           </li>
           <li>
             <span class="where">미스터피자</span>
-            <span class="cost">32,000</span>
+            <span class="price">32,000</span>
           </li>
           <li>
             <span class="where">미스터피자</span>
-            <span class="cost income">+ 32,000</span>
+            <span class="price income">+ 32,000</span>
           </li>
         </ul>
       </div>
     </div><!--// .usage-history-->
   </section><!--// .account-detail-->
-
 </div><!--// #wrap-->
 </body>
 </html>
