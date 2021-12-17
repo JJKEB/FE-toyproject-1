@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<!-- 프라미스 - 병렬처리 - then, fetch, 어싱크 어웨이 -->
+<div class="app-data">
+  <ul id="app"></ul>
+</div>
+
+<script>
+  if('ActiveXObject' in window){
+    return newXML = new ActiveXObject('Msxml2.XMLHTTP');
+  }else{
+    return newXML = ;
+  }
+const newXML = new XMLHttpRequest();
+const jsonData = 'http://jsonplaceholder.typicode.com/photos/';
+newXML.open("GET", jsonData)
+newXML.responseType = 'json'
+newXML.send()
+newXML.onload = function(){
+  console.log(newXML.response)
+  start(newXML.response)
+}
+
+fetch('http://jsonplaceholder.typicode.com/photos/')
+  .then( res => res.json() )
+  .then( obj => { start(obj) } )
+
+function start(photos){
+  const ulEl = document.createElement('ul')
+  document.querySelector('#app').appendChild(ulEl)
+
+  for (let i = 0; i < 100; i++) {
+    const liEl = document.createElement('li')
+    const imgEl = document.createElement('img')
+    const pEl = document.createElement('p')
+
+    imgEl.src = photos[i].thumbnailUrl;
+    pEl.textContent = photos[i].title;
+    liEl.appendChild(imgEl)
+    liEl.appendChild(pEl)
+    ulEl.appendChild(liEl)
+  }
+}
+
+</script>
+</body>
+</html>
