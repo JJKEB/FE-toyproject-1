@@ -14,12 +14,13 @@
 </div>
 
 <script>
-  if('ActiveXObject' in window){
+/*  if('ActiveXObject' in window){
     return newXML = new ActiveXObject('Msxml2.XMLHTTP');
   }else{
     return newXML = ;
-  }
-const newXML = new XMLHttpRequest();
+  }*/
+
+/*const newXML = new XMLHttpRequest();
 const jsonData = 'http://jsonplaceholder.typicode.com/photos/';
 newXML.open("GET", jsonData)
 newXML.responseType = 'json'
@@ -27,7 +28,7 @@ newXML.send()
 newXML.onload = function(){
   console.log(newXML.response)
   start(newXML.response)
-}
+}*/
 
 fetch('http://jsonplaceholder.typicode.com/photos/')
   .then( res => res.json() )

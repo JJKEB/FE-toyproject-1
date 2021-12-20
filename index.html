@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">-->
 </head>
 <body>
 <div id="wrap">
@@ -54,33 +54,44 @@
   <section class="account-detail">
 
     <!-- 테마 저축 -->
-    <div class="saving-plan">
-      <ul>
-        <li>
-          <div class="inner">
-            <span class="gauge"></span>
-            <div class="content">
-              <b class="nickname">여행가자!</b><span class="price">842,200원</span>
+    <div class="account-detail__saving">
+      <div class="inner">
+        <ul class="items">
+          <li class="item">
+            <div class="item__inner">
+              <span class="gauge"></span>
+              <div class="content">
+                <b class="nickname">여행가자!</b><span class="price">842,200원</span>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <div class="inner">
-            <span class="gauge"></span>
-            <div class="content">
-              <b class="nickname">여행가자!</b><span class="price">842,200원</span>
+          </li>
+          <li class="item">
+            <div class="item__inner">
+              <span class="gauge"></span>
+              <div class="content">
+                <b class="nickname">여행가자!</b><span class="price">842,200원</span>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+          <li class="item">
+            <div class="item__inner">
+              <span class="gauge"></span>
+              <div class="content">
+                <b class="nickname">여행가자!</b><span class="price">842,200원</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="add-saving" aria-label="저축 플랜 추가">저금통 만들기</button>
+      </div>
     </div><!--// .saving-plan-->
 
     <!-- 사용내역 -->
-    <div class="usage-history">
+    <div class="account-detail__usage-history">
       <div class="day-history-wrap">
         <div class="history-top">
           <strong class="when">오늘</strong>
-          <span class="total-amount-used">127</span>
+          <span class="total-amount-used">127,600원 지출</span>
         </div>
         <ul class="list-used">
           <li>
@@ -101,7 +112,7 @@
       <div class="day-history-wrap">
         <div class="history-top">
           <strong class="when">오늘</strong>
-          <span class="total-amount-used">127</span>
+          <span class="total-amount-used">127,600원 지출</span>
         </div>
         <ul class="list-used">
           <li>
@@ -121,5 +132,6 @@
     </div><!--// .usage-history-->
   </section><!--// .account-detail-->
 </div><!--// #wrap-->
+<script src="./js/script.js"></script>
 </body>
 </html>
