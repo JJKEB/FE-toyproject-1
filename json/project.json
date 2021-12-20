@@ -1,0 +1,125 @@
+{
+  "residental":{
+    "items":[
+      {
+        "id":"10",
+        "value":"1",
+        "lang_en":"Hannam-dong, Daqing Apartments 1",
+        "lang_ko":"한남동대경아파트 1",
+        "img":"residental-01.jpg"
+      },
+      {
+        "id":"20",
+        "value":"2",
+        "lang_en":"Hannam-dong, Daqing Apartments 2",
+        "lang_ko":"한남동대경아파트 2",
+        "img":"residental-02.jpg"
+      },
+      {
+        "id":"30",
+        "value":"3",
+        "lang_en":"Hannam-dong, Daqing Apartments 3",
+        "lang_ko":"한남동대경아파트 3",
+        "img":"residental-03.jpg"
+      },
+      {
+        "id":"40",
+        "value":"4",
+        "lang_en":"Hannam-dong, Daqing Apartments 4",
+        "lang_ko":"한남동대경아파트 4",
+        "img":"residental-04.jpg"
+      },
+      {
+        "id":"50",
+        "value":"5",
+        "lang_en":"Hannam-dong, Daqing Apartments 5",
+        "lang_ko":"한남동대경아파트 5",
+        "img":"residental-05.jpg"
+      },
+      {
+        "id":"60",
+        "value":"6",
+        "lang_en":"Hannam-dong, Daqing Apartments 6",
+        "lang_ko":"한남동대경아파트 6",
+        "img":"residental-06.jpg"
+      },
+      {
+        "id":"70",
+        "value":"7",
+        "lang_en":"Hannam-dong, Daqing Apartments 7",
+        "lang_ko":"한남동대경아파트 7",
+        "img":"residental-07.jpg"
+      }
+    ]
+  },
+
+  "commercial":{
+    "items":[
+      {
+        "id":"110",
+        "value":"1",
+        "lang_en":"Hannam-dong, Daqing Apartments 1",
+        "lang_ko":"한남동대경아파트 1",
+        "img":"commercial-01.jpg"
+      },
+      {
+        "id":"210",
+        "value":"2",
+        "lang_en":"Hannam-dong, Daqing Apartments 2",
+        "lang_ko":"한남동대경아파트 2",
+        "img":"commercial-02.jpg"
+      },
+      {
+        "id":"310",
+        "value":"3",
+        "lang_en":"Hannam-dong, Daqing Apartments 3",
+        "lang_ko":"한남동대경아파트 3",
+        "img":"commercial-03.jpg"
+      },
+      {
+        "id":"410",
+        "value":"4",
+        "lang_en":"Hannam-dong, Daqing Apartments 4",
+        "lang_ko":"한남동대경아파트 4",
+        "img":"commercial-04.jpg"
+      },
+      {
+        "id":"510",
+        "value":"5",
+        "lang_en":"Hannam-dong, Daqing Apartments 5",
+        "lang_ko":"한남동대경아파트 5",
+        "img":"commercial-05.jpg"
+      }
+    ]
+  },
+
+  "office":{
+    "items":[
+
+    ]
+  },
+
+  "medical":{
+    "items":[
+
+    ]
+  },
+
+  "exhibition":{
+    "items":[
+
+    ]
+  },
+
+  "leisure":{
+    "items":[
+
+    ]
+  },
+
+  "other":{
+    "items":[
+
+    ]
+  }
+}

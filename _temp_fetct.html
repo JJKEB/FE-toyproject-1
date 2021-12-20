@@ -32,7 +32,7 @@ newXML.onload = function(){
 
 fetch('http://jsonplaceholder.typicode.com/photos/')
   .then( res => res.json() )
-  .then( obj => { start(obj) } )
+  .then( obj => { start(obj) })
 
 function start(photos){
   const ulEl = document.createElement('ul')
