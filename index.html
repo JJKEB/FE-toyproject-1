@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
-  <!--<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">-->
 </head>
 <body>
 <div id="wrap">
@@ -219,25 +218,6 @@
     </div><!--// .usage-history-->
   </section><!--// .account-detail-->
 </div><!--// #wrap-->
-<!--<script src="./json/bank.json" type="text/javascript"></script>-->
-
-<script>
-
-function loadItems(){
-	return fetch("data/testt.json")
-    .then(function(res){
-			console.log(res)
-			console.log(res.json())
-    })
-		//.then((response) => response.json())
-		//.then((json) => json.items);
-}
-
-loadItems().then((items) => {
-	console.log(items)
-})
-
-</script>
 <script src="./js/script.js"></script>
 </body>
 </html>
