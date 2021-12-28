@@ -1,3 +1,5 @@
+
+/* 전역 사용 클래스 */
 class Util {
   constructor() {}
 	static classToggle(target, trigger, className = 'active'){
@@ -15,14 +17,13 @@ class Util {
 		return Object.prototype.toString.call(data).slice(8, -1)
 	}
 }
-
 Util.classToggle('.account-detail','.event-detail-toggle')
 
-// 왜 ?
-// 이렇게 조회했던 변수 값이 언제까지 메모리에 남아있는지? 필요없어진 데이터는 어떻게 삭제해야 할지
+
 
 
 class AccountManagement {
+	/* 내외부적으로 사용할 프로퍼티 변수 생성 */
 	constructor(startLoadDay = 5) {
 		//this.today = null														// 실제 현재 날자
 		this.jsonData = null													// json data
@@ -37,10 +38,16 @@ class AccountManagement {
 
 		this.getData()
   }
+
+	/*
+	* JSON 로드 후 기능 초기화
+	*/
 	init(obj) {
 		const __this = this;
 		// 받아온 json data 저장
 		__this.jsonData = Object.assign([],obj.bankList)
+
+		console.log('총 결제내역 갯수 : ', this.jsonData.length)
 
 		// 날자 생성
 		//const date = new Date();
@@ -141,6 +148,7 @@ class AccountManagement {
 		return __this.accountData;
 	}
 
+	/* 리스트 요소 생성 및 데이터 삽입 */
 	createInOutList(obj) {
 		const __this = this;
 		const korDayName = ['오늘', '어제'];
@@ -148,10 +156,16 @@ class AccountManagement {
 		// 로드 되어진 일수 - 로드 했던 일수 = 생성 시작할 인텍스 값
 		let addStartIndex =  __this.loadedDay - __this.limitLoadDay
 
+		console.log('--------------------------------------------')
+		console.log('설정된 오늘로부터 로드된 일수 : ', __this.loadedDay, '일')
+		console.log('현재까지 취합된 데이터 갯수 : ', this.jsonData.length - this.restData.length, '개')
+		console.log('남은 결제내역 갯수 : ', this.restData.length, '개')
+
 		// 로드가 완료 되지 않았다면
 		if (!__this.dayDivideEnd) {
 			for (let i = addStartIndex; i < __this.loadedDay; i++) {
 				if (obj[i] !== undefined) {
+
 					const itemWrap = makeEl('div','day-history-wrap')
 					const top = makeEl('div','history-top')
 					const topWhen = makeEl('strong','when')
@@ -159,14 +173,19 @@ class AccountManagement {
 					const listUsed = makeEl('ul','list-used')
 					let whenText = ''
 					let totalUsedMoney = 0
+
+						console.log(obj[i])
+
 					if (i <= 1) {
 						whenText = korDayName[i]
 					} else {
-						console.log(obj[i][0])
 						whenText = obj[i][0].date;
 					}
+
 					topWhen.textContent = whenText
+
 					for (let j = 0; j < obj[i].length; j++) {
+
 						const listUsed_li = makeEl('li')
 						const listUsed_li_where = makeEl('span','where')
 						const listUsed_li_price = makeEl('span','price')
@@ -182,6 +201,7 @@ class AccountManagement {
 						listUsed_li.appendChild(listUsed_li_price)
 						listUsed.appendChild(listUsed_li)
 					}
+
 					topTotalAmount.textContent = `${totalUsedMoney.toLocaleString('ko-KR')}원 지출`;
 					top.appendChild(topWhen)
 					top.appendChild(topTotalAmount)
@@ -201,7 +221,10 @@ class AccountManagement {
 	}
 }
 
+/* 계좌 매니저 인스턴스 생성 */
 const accountManagement = new AccountManagement();
+
+/* 이벤트 테스트 */
 const accountDetail = document.querySelector('.account-detail')
 const usageHistory = document.querySelector('.account-detail__usage-history')
 usageHistory.addEventListener('scroll', _.throttle(function () {
